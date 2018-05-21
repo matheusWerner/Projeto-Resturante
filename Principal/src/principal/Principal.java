@@ -15,7 +15,7 @@ public class Principal {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        JOptionPane.showMessaDialog(null, "Minha mensagem");
+        JOptionPane.showMessageDialog(null, "Minha mensagem");
     }
     
 }
