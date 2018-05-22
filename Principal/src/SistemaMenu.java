@@ -26,20 +26,7 @@ public void menuSistema() {
     while(menu != 6) {
              switch (menu) {
                  
-                case 1: int subMenu = Integer.parseInt(JOptionPane.showInputDialog(
-              "1 - Cadastrar Funcionário" + 
-              "\n2 - Editar Funcionário" + 
-              "\n3 - Buscar pelo Nome do Funcionário" +
-              "\n4 - Listar Funcionário" +
-              "\n5 - Editar Funcionário" +
-              "\n6 - Mostrar quantidade de registros" +       
-              "\n8001 - Sair"));
-                    while(subMenu != 10) {
-                        switch (subMenu) {
-                            case 1: registroFuncionario.solicitarCadastro();
-                                break;
-                        }
-                    }
+                case 1: registroFuncionario.menuFuncionario();
                     break;
                 case 2:
                     break;
@@ -49,49 +36,28 @@ public void menuSistema() {
                     break;
                 case 5: registroFuncionario.listar();
                     break;
-                case 6: registroFuncionario.contabilizarPeloNome();
+                case 6: registroFuncionario.numeroCadastros();
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Oppção Inválida");
                     
              } 
+             
+             menu = Integer.parseInt(JOptionPane.showInputDialog(null,
+              "1 - Funcionários"
+            + "\n2 - Fornecimento de Produtor"
+            + "\n3 - Convênios"
+            + "\n4 - Despesas e Ganhos"
+            + "\n5 - Sobre"
+            + "\n6 - Sair"));
+             
+             
              
           }
     
     
 
-    int subMenu = Integer.parseInt(JOptionPane.showInputDialog(
-              "1 - Cadastrar Funcionário" + 
-              "\n2 - Editar Funcionário" + 
-              "\n3 - Buscar pelo Nome do Funcionário" +
-              "\n4 - Listar Funcionário" +
-              "\n5 - Editar Funcionário" +
-              "\n6 - Mostrar quantidade de registros" +       
-              "\n8001 - Sair"));
-    
-    
-          while(menu != 10) {
-             switch (menu) {
-                 
-                case 1: registroFuncionario.cadastrar(); 
-                    break;
-                case 2:
-                    break;
-                case 3: registroFuncionario.buscarPeloNome(); 
-                    break;
-                case 4:
-                    break;
-                case 5: registroFuncionario.listar();
-                    break;
-                case 6: registroFuncionario.contabilizarPeloNome();
-                    break;
-                default:
-                    JOptionPane.showMessageDialog(null, "Oppção Inválida");
-                    
-             } 
-             
-          }
-        
+   
    } 
 
 }
