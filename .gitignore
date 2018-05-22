@@ -8,3 +8,5 @@ Principal/nbproject/genfiles.properties
 Principal/nbproject/build-impl.xml
 Principal/manifest.mf
 Principal/build.xml
+/nbproject/private/
+/build/
