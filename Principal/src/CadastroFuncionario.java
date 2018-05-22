@@ -9,6 +9,8 @@ import javax.swing.JOptionPane;
 
 
 public class CadastroFuncionario {
+    
+    CadastroFuncionario registroFuncionario = new CadastroFuncionario();
       
     
     String[] nomes = new String[50];
@@ -25,6 +27,10 @@ public class CadastroFuncionario {
     String[] estadoCivil = new String[50];
     int atual = 0;
     
+    public void cadastrar() {
+        solicitarCadastro(atual);
+        atual++;
+    }
     
     public void solicitarCadastro(int x) {
         
@@ -42,16 +48,119 @@ public class CadastroFuncionario {
         estadoCivil[x] = JOptionPane.showInputDialog("Informe o estado civil");
         
 
-        atual++;
+       
         
     }
     
     public void listar() {
         
         String texto = "";
+        for (int i = 0; i < atual; i++) {
+            texto += nomes[i] +  "   " + cpfs[i] + "\n";
+        }
+        JOptionPane.showMessageDialog(null, texto);
         
     }
     
+    public void editar() {
+        
+        String busca = JOptionPane.showInputDialog("Informe o nome para editar");
+        
+        for (int i = 0; i < atual; i++) {
+            
+            if(nomes[i].equals(busca)) {
+                apresentarCadastro(i);
+                return;
+        }
+     }
+    } 
+    
+    public void apresentarCadastro (int i) {
+        
+         JOptionPane.showMessageDialog(null,
+                       "Nome: " + nomes[i] +
+                       "\nIdade: " + idades[i] +
+                       "\nCPF: " + cpfs[i] +
+                       "\nEmprego Anterior: " + empregoAnterior[i] +
+                       "\nCidade: " + cidades[i] +
+                       "\nBairro: " + bairros[i] +
+                       "\nSalário: " + salarios[i] +
+                       "\nCEP: " + ceps[i] +
+                       "\nNúmero: " + numeros[i] +
+                       "\nComplemento: " + complementos[i] +
+                       "\nEstado Civil: " + estadoCivil[i]
+                        );
+        
+        
+    }
+    
+    public void buscarPeloNome () {
+        String busca = JOptionPane.showInputDialog("Digite o nome parcial para a busca");
+        
+        for (int i = 0; i < atual; i++) {
+            if(nomes[i].contains(busca)) {
+                JOptionPane.showMessageDialog(null,
+                       "Nome: " + nomes[i] +
+                       "\nIdade: " + idades[i] +
+                       "\nCPF: " + cpfs[i] +
+                       "\nEmprego Anterior: " + empregoAnterior[i] +
+                       "\nCidade: " + cidades[i] +
+                       "\nBairro: " + bairros[i] +
+                       "\nSalário: " + salarios[i] +
+                       "\nCEP: " + ceps[i] +
+                       "\nNúmero: " + numeros[i] +
+                       "\nComplemento: " + complementos[i] +
+                       "\nEstado Civil: " + estadoCivil[i]
+                         );
+            }
+        }
+        
+    }
+    
+    public void menuFuncionario() {
+        
+        int menuDosFuncionarios = Integer.parseInt(JOptionPane.showInputDialog(
+              "1 - Cadastrar Funcionário" + 
+              "\n2 - Editar Funcionário" + 
+              "\n3 - Buscar pelo Nome do Funcionário" +
+              "\n4 - Listar Funcionário" +
+              "\n5 - Mostrar quantidade de cadastros" +       
+              "\n6 - Sair"));
+        
+        while(menuDosFuncionarios != 6) {
+            switch (menuDosFuncionarios) {
+                case 1: registroFuncionario.cadastrar(); 
+                    break;
+                case 2: registroFuncionario.editar();
+                    break;
+                case 3: registroFuncionario.buscarPeloNome(); 
+                    break;
+                case 4: registroFuncionario.listar();
+                    break;
+                case 5: registroFuncionario.numeroCadastros();
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Oppção Inválida");
+            }
+        }
+    
+    }
+    
+    public void numeroCadastros() {
+       String busca = JOptionPane.showInputDialog("digite o nome parcial para a busca");
+       
+       int quantidadeCadastro = 0;
+       for (int i = 0; i < atual; i++) {
+           if(nomes[i].contains(busca)) {
+               quantidadeCadastro++;
+           }
+       }
+       JOptionPane.showMessageDialog(null, "A quantidade de " + busca + " é: "
+                                + quantidadeCadastro);
+       
+              
+              
+    } 
     
     
     
