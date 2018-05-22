@@ -13,6 +13,8 @@ import javax.swing.JOptionPane;
  */
 public class ProjetoRestauranteProdutos {
     
+    ProjetoRestauranteProdutos registroProdutos = new ProjetoRestauranteProdutos();
+    
     String transportadoras[] = new String[5];
     String medidas[] = new String[5];
     String dia[] = new String[5];
@@ -46,7 +48,38 @@ public class ProjetoRestauranteProdutos {
         JOptionPane.showMessageDialog(null, texto);
     }
     
-    public void estatisticasProdutos(){
+    public void menuProdutos(){
+        int menuProdutos = Integer.parseInt(JOptionPane.showInputDialog(
+                "1 - Cadastrar Produtos" +
+                "\n2 - Editar Produtos" +
+                "\n3 - Listar Produtos" +
+                "\n4 - Buscar Produtos" +
+                "\n5 - Estatisticas" +
+                "\n6 - SAIR"));
+        while(menuProdutos != 6)
+            switch (menuProdutos) {
+                case 1:
+                    registroProdutos.cadastroProdutos();
+                    break;
+                case 2:
+                    registroProdutos.editarProdutos();
+                    break;
+                case 3:
+                    registroProdutos.listarProdutos();
+                    break;
+                case 4:
+                    registroProdutos.buscarProdutos();
+                    break;
+                case 5:
+                    registroProdutos.estatisticas();
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Opção inválida");
+            }
+        
+    }
+    
+    public void estatisticas(){
         
     }
     
