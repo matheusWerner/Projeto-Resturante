@@ -55,7 +55,7 @@ public class ProjetoRestauranteProdutos {
                 "\n3 - Listar Produtos" +
                 "\n4 - Buscar Produtos" +
                 "\n5 - Estatisticas" +
-                "\n6 - Sair"));
+                "\n6 - SAIR"));
         while(menuProdutos != 6)
             switch (menuProdutos) {
                 case 1:
