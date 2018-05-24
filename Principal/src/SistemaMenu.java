@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 public class SistemaMenu {
     
     CadastroFuncionario registroFuncionario = new CadastroFuncionario();
+    ProjetoRestauranteProdutos registroProduto = new ProjetoRestauranteProdutos();
     
 
 public void menuSistema() {
@@ -29,7 +30,7 @@ public void menuSistema() {
                  
                 case 1: registroFuncionario.menuFuncionario();
                     break;
-                case 2: 
+                case 2: registroProduto.menuProdutos(); 
                     break;
                 case 3:  
                     break;
