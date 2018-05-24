@@ -28,15 +28,15 @@ public void menuSistema() {
                  
                 case 1: registroFuncionario.menuFuncionario();
                     break;
-                case 2:
+                case 2: 
                     break;
-                case 3: registroFuncionario.buscarPeloNome(); 
+                case 3:  
                     break;
                 case 4:
                     break;
-                case 5: registroFuncionario.listar();
+                case 5: 
                     break;
-                case 6: registroFuncionario.numeroCadastros();
+                case 6: 
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Oppção Inválida");

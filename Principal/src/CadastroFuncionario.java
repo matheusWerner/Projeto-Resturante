@@ -10,7 +10,8 @@ import javax.swing.JOptionPane;
 
 public class CadastroFuncionario {
     
-    CadastroFuncionario registroFuncionario = new CadastroFuncionario();
+    
+    
       
     
     String[] nomes = new String[50];
@@ -69,7 +70,7 @@ public class CadastroFuncionario {
         for (int i = 0; i < atual; i++) {
             
             if(nomes[i].equals(busca)) {
-                apresentarCadastro(i);
+                solicitarCadastro(i);
                 return;
         }
      }
@@ -119,29 +120,41 @@ public class CadastroFuncionario {
     
     public void menuFuncionario() {
         
-        int menuDosFuncionarios = Integer.parseInt(JOptionPane.showInputDialog(
+       int menuDosFuncionarios = Integer.parseInt(JOptionPane.showInputDialog(
               "1 - Cadastrar Funcionário" + 
               "\n2 - Editar Funcionário" + 
               "\n3 - Buscar pelo Nome do Funcionário" +
               "\n4 - Listar Funcionário" +
               "\n5 - Mostrar quantidade de cadastros" +       
-              "\n6 - Sair"));
+              "\n6 - Acessar Menu de Estatísticas" + 
+              "\n7 - SAIR"));
         
-        while(menuDosFuncionarios != 6) {
+        while(menuDosFuncionarios != 7) {
             switch (menuDosFuncionarios) {
-                case 1: registroFuncionario.cadastrar(); 
+                case 1: cadastrar(); 
                     break;
-                case 2: registroFuncionario.editar();
+                case 2: editar();
                     break;
-                case 3: registroFuncionario.buscarPeloNome(); 
+                case 3: buscarPeloNome(); 
                     break;
-                case 4: registroFuncionario.listar();
+                case 4: listar();
                     break;
-                case 5: registroFuncionario.numeroCadastros();
+                case 5: numeroCadastros();
+                    break;
+                case 6: menuEstatistica();
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Oppção Inválida");
             }
+            
+            menuDosFuncionarios = Integer.parseInt(JOptionPane.showInputDialog(
+              "1 - Cadastrar Funcionário" + 
+              "\n2 - Editar Funcionário" + 
+              "\n3 - Buscar pelo Nome do Funcionário" +
+              "\n4 - Listar Funcionário" +
+              "\n5 - Mostrar quantidade de cadastros" +       
+              "\n6 - Acessar Menu de Estatísticas" + 
+              "\n7 - SAIR"));
         }
     
     }
@@ -161,6 +174,57 @@ public class CadastroFuncionario {
               
               
     } 
+    
+    public void menuEstatistica() {
+        
+        int menuDasEstatisticas = Integer.parseInt(JOptionPane.showInputDialog(
+              "1 - Média de Idade do Restaurante" + 
+              "\n2 - Média de Salário do Restaurante" +       
+              "\n3 - SAIR"));
+        
+        while(menuDasEstatisticas != 3) {
+            switch (menuDasEstatisticas) {
+                case 1: estatisticaIdade();
+                        break;
+                case 2: estatisticaSalario();
+                        break;
+            }
+            menuDasEstatisticas = Integer.parseInt(JOptionPane.showInputDialog(null,
+              "1 - Funcionários"
+            + "\n2 - Fornecimento de Produtos"
+            + "\n3 - SAIR"));
+        }
+        
+    }
+    
+    public void estatisticaSalario() {
+        
+        double mediaSalario = 0;
+        
+        for (int i = 0; i < atual; i++) {
+            
+         mediaSalario = mediaSalario + salarios[i];
+         
+        }
+        JOptionPane.showMessageDialog(null, "A média de salário do Restaurante é: " + mediaSalario / atual);
+        
+    }
+    
+    public void estatisticaIdade() {
+        
+        int mediaIdade = 0;
+        
+        for (int i = 0; i < atual; i++) {
+            
+            mediaIdade = mediaIdade + idades[i]; 
+        }
+        JOptionPane.showMessageDialog(null, "A média de idade dos funcionários do Restaurante é: " + mediaIdade / atual);
+        
+        
+        
+        
+    }
+    
     
     
     
