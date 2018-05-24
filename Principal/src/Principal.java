@@ -14,13 +14,10 @@ public class Principal {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+
         
         SistemaMenu sistema = new SistemaMenu();
         sistema.menuSistema();
        
-
-        
-        
-    }
-    
+    }   
 }
