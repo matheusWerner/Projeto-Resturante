@@ -18,12 +18,13 @@ public void menuSistema() {
     int menu = Integer.parseInt(JOptionPane.showInputDialog(null,
               "1 - Funcionários"
             + "\n2 - Fornecimento de Produtor"
-            + "\n3 - Convênios"
-            + "\n4 - Despesas e Ganhos"
-            + "\n5 - Sobre"
-            + "\n6 - Sair"));
+            + "\n3 - Convênios: Pessoa Física"
+            + "\n4 - Convênios: Pessoa Jurídica"          
+            + "\n5 - Despesas e Ganhos"
+            + "\n6 - Sobre"
+            + "\n7 - Sair"));
     
-    while(menu != 6) {
+    while(menu != 7) {
              switch (menu) {
                  
                 case 1: registroFuncionario.menuFuncionario();
