@@ -46,8 +46,12 @@ public class CadastroDespesas {
         
         for (j = 0; j < atual; j++) {
             
-        despesas[j] = contaLuz[j] + contaAgua[j] + contaGas[j] + aluguel[j] + marketing[j]
-                      + folhaPagamento[j];
+        despesas[j] = contaLuz[j] + 
+                      contaAgua[j] + 
+                      contaGas[j] + 
+                      aluguel[j] + 
+                      marketing[j] +
+                      folhaPagamento[j];
         
         
         ganhos[j] = eventos[j] + vendas[j];
