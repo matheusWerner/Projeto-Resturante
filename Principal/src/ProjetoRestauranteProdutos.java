@@ -1,5 +1,6 @@
-
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -49,14 +50,16 @@ public class ProjetoRestauranteProdutos {
     }
     
     public void menuProdutos(){
-        int menuDosProdutos = Integer.parseInt(JOptionPane.showInputDialog(
+        int menuDosProdutos = Integer.parseInt(JOptionPane.showInputDialog(null,
                 "1 - Cadastrar Produtos" +
                 "\n2 - Editar Produtos" +
                 "\n3 - Listar Produtos" +
                 "\n4 - Buscar Produtos" +
                 "\n5 - Estatisticas" +
-                "\n6 - SAIR"));
-        while(menuDosProdutos != 6)
+                "\n6 - SAIR", "",0,
+                new ImageIcon(ProjetoRestauranteProdutos.class.getResource("restaurant.png")), 
+                null, null).toString());
+        while(menuDosProdutos != 6){
             switch (menuDosProdutos) {
                 case 1:
                     cadastroProdutos();
@@ -84,7 +87,7 @@ public class ProjetoRestauranteProdutos {
                 "\n4 - Buscar Produtos" +
                 "\n5 - Estatisticas" +
                 "\n6 - SAIR"));
-        
+        }
         
     }
     

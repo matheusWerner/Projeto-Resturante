@@ -111,7 +111,7 @@ public class CadastroPessoaFisica {
         
     }
     
-    public void menuCadastroProjeto() {
+    public void menuCadastroFisica() {
         
        int menuCadastroFisica = Integer.parseInt(JOptionPane.showInputDialog(
               "1 - Cadastrar Funcionário" + 
@@ -137,7 +137,7 @@ public class CadastroPessoaFisica {
                 case 6: estatisticasFisica();
                     break;
                 default:
-                    JOptionPane.showMessageDialog(null, "Oppção Inválida");
+                    JOptionPane.showMessageDialog(null, "Opção Inválida");
             }
             
             menuCadastroFisica = Integer.parseInt(JOptionPane.showInputDialog(

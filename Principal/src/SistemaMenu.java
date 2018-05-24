@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 /**
  *
@@ -22,7 +23,8 @@ public void menuSistema() {
             + "\n3 - Convênios"
             + "\n4 - Despesas e Ganhos"
             + "\n5 - Sobre"
-            + "\n6 - Sair"));
+            + "\n6 - Sair", "",0,
+            new ImageIcon(SistemaMenu.class.getResource("restaurant.png")), null, null).toString());
     
     while(menu != 6) {
              switch (menu) {

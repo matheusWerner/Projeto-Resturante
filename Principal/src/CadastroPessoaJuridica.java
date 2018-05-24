@@ -1,4 +1,5 @@
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /*
@@ -109,14 +110,16 @@ public class CadastroPessoaJuridica {
     
     public void menuCadastroJuridica() {
         
-       int menuCadastroJuridica = Integer.parseInt(JOptionPane.showInputDialog(
+       int menuCadastroJuridica = Integer.parseInt(JOptionPane.showInputDialog(null,
               "1 - Cadastrar Pessoa Juridica" + 
               "\n2 - Editar Pessoa Juridica" + 
               "\n3 - Buscar Pessoa Juridica" +
               "\n4 - Listar Pessoa Juridica" +
               "\n5 - Mostrar quantidade de cadastros" +       
               "\n6 - Acessar Menu de Estatísticas Juridica" + 
-              "\n7 - SAIR"));
+              "\n7 - SAIR", "",0,
+                new ImageIcon(ProjetoRestauranteProdutos.class.getResource("restaurant.png")), 
+                null, null).toString());
         
         while(menuCadastroJuridica != 7) {
             switch (menuCadastroJuridica) {
