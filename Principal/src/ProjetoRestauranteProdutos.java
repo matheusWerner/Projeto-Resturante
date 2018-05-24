@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  */
 public class ProjetoRestauranteProdutos {
     
-    ProjetoRestauranteProdutos registroProdutos = new ProjetoRestauranteProdutos();
+  
     
     String transportadoras[] = new String[5];
     String medidas[] = new String[5];
@@ -22,7 +22,7 @@ public class ProjetoRestauranteProdutos {
     int atual = 0;
     
     public void cadastroProdutos(){
-          solicitarInformacao(atual);
+          solicitarInformação(atual);
             atual++;
      
        }
@@ -49,37 +49,48 @@ public class ProjetoRestauranteProdutos {
     }
     
     public void menuProdutos(){
-        int menuProdutos = Integer.parseInt(JOptionPane.showInputDialog(
+        int menuDosProdutos = Integer.parseInt(JOptionPane.showInputDialog(
                 "1 - Cadastrar Produtos" +
                 "\n2 - Editar Produtos" +
                 "\n3 - Listar Produtos" +
                 "\n4 - Buscar Produtos" +
                 "\n5 - Estatisticas" +
                 "\n6 - SAIR"));
-        while(menuProdutos != 6)
-            switch (menuProdutos) {
+        while(menuDosProdutos != 6)
+            switch (menuDosProdutos) {
                 case 1:
-                    registroProdutos.cadastroProdutos();
+                    cadastroProdutos();
                     break;
                 case 2:
-                    registroProdutos.editarProdutos();
+                    editarProdutos();
                     break;
                 case 3:
-                    registroProdutos.listarProdutos();
+                    listarProdutos();
                     break;
                 case 4:
-                    registroProdutos.buscarProdutos();
+                    buscarProdutos();
                     break;
                 case 5:
-                    registroProdutos.estatisticas();
+                    estatisticas();
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Opção inválida");
+                    
             }
+        menuDosProdutos = Integer.parseInt(JOptionPane.showInputDialog(
+                "1 - Cadastrar Produtos" +
+                "\n2 - Editar Produtos" +
+                "\n3 - Listar Produtos" +
+                "\n4 - Buscar Produtos" +
+                "\n5 - Estatisticas" +
+                "\n6 - SAIR"));
+        
         
     }
     
     public void estatisticas(){
+        
+        
         
     }
     
@@ -88,7 +99,10 @@ public class ProjetoRestauranteProdutos {
          
          for(int i = 0; i < atual; i++){
              if(transportadoras[i].contains(busca)){
-                 solicitarInformação(i);
+                JOptionPane.showMessageDialog(null, 
+                "Nome da Transportadora: " + transportadoras[i] +
+                "Carga fornecida: " + medidas[i] +
+                "Dia do fornecimento: " + dia[i]);
                  
              }
          }
@@ -103,20 +117,15 @@ public class ProjetoRestauranteProdutos {
     public void apresentarInformação(int i){
         JOptionPane.showMessageDialog(null, 
                 "Nome da Transportadora: " + transportadoras[i] +
-                        "Carga fornecida: " + medidas[i] +
-                        "Dia do fornecimento: " + dia[i]
+                "Carga fornecida: " + medidas[i] +
+                "Dia do fornecimento: " + dia[i]
                         
                         
                       
         );
     }
 
-    private void solicitarInformacao(int atual) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    } 
     
-    
-        
             
         
         
