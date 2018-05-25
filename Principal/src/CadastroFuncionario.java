@@ -1,7 +1,7 @@
 
 /**
  *
- * @author Alunos
+ * @author Matheus Ruan Werner
  */
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -9,14 +9,10 @@ import javax.swing.JOptionPane;
 
 
 public class CadastroFuncionario {
-    
-    
-    
-      
-    
+        
     String[] nomes = new String[50];
     int[] idades = new int[50];
-    char[] sexos = new char[50];
+    String[] sexos = new String[50];
     String[] cpfs = new String[50];
     String[] cidades = new String[50];
     String[] bairros = new String[50];
@@ -35,18 +31,23 @@ public class CadastroFuncionario {
     
     public void solicitarCadastro(int x) {
         
-        nomes[x] = JOptionPane.showInputDialog("Insira seu nome");
-        idades[x] = Integer.parseInt(JOptionPane.showInputDialog(nomes[0] + " digite a sua idade"));
-        sexos[x] = JOptionPane.showInputDialog(nomes[0] + " digite o seu sexo").charAt(0);
-        cpfs[x] = JOptionPane.showInputDialog(nomes[0] + " digite o seu CPF").replace(".","").replace("-","");
-        cidades[x] = JOptionPane.showInputDialog("Digite a sua cidade");
-        salarios[x] = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor do salário"));
-        bairros[x] = JOptionPane.showInputDialog("Digite o seu bairro");
-        ceps[x] = JOptionPane.showInputDialog("Digite o seu CEP");
-        numeros[x] = JOptionPane.showInputDialog("Digite o seu número");
-        complementos[x] = JOptionPane.showInputDialog("Digite o complemento");
-        empregoAnterior[x] = JOptionPane.showInputDialog("Informe o emprego anterior");
-        estadoCivil[x] = JOptionPane.showInputDialog("Informe o estado civil");
+        nomes[x] = JOptionPane.showInputDialog("Insira seu nome").trim();
+        idades[x] = Integer.parseInt(JOptionPane.showInputDialog(nomes[0] + " digite a sua idade").trim());
+        sexos[x] = JOptionPane.showInputDialog(null,
+                "Sexo", null, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
+                    "", "Masculino", "Feminino"
+                },
+                ""
+        ).toString();
+        cpfs[x] = JOptionPane.showInputDialog(nomes[0] + " digite o seu CPF").replace(".","").replace("-","").trim();
+        cidades[x] = JOptionPane.showInputDialog("Digite a sua cidade").trim();
+        salarios[x] = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor do salário").trim());
+        bairros[x] = JOptionPane.showInputDialog("Digite o seu bairro").trim();
+        ceps[x] = JOptionPane.showInputDialog("Digite o seu CEP").replace("-","").trim();
+        numeros[x] = JOptionPane.showInputDialog("Digite o seu número").replace(".","").replace("-","");
+        complementos[x] = JOptionPane.showInputDialog("Digite o complemento").trim();
+        empregoAnterior[x] = JOptionPane.showInputDialog("Informe o emprego anterior").trim();
+        estadoCivil[x] = JOptionPane.showInputDialog("Informe o estado civil").trim();
         
 
        
@@ -120,8 +121,9 @@ public class CadastroFuncionario {
     
     public void menuFuncionario() {
         
-       int menuDosFuncionarios = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o Código para acessar as Informações" +
-              "\n\n1 - Cadastrar Funcionário" + 
+       int menuDosFuncionarios = Integer.parseInt(JOptionPane.showInputDialog(null, 
+              "Digite o Código para acessar as Opções" +
+              "\n\n\n1 - Cadastrar Funcionário" + 
               "\n\n2 - Editar Funcionário" + 
               "\n\n3 - Buscar pelo Nome do Funcionário" +
               "\n\n4 - Listar Funcionário" +
@@ -150,13 +152,13 @@ public class CadastroFuncionario {
             }
             
             menuDosFuncionarios = Integer.parseInt(JOptionPane.showInputDialog(null,
-              "1 - Cadastrar Funcionário" + 
-              "\n2 - Editar Funcionário" + 
-              "\n3 - Buscar pelo Nome do Funcionário" +
-              "\n4 - Listar Funcionário" +
-              "\n5 - Mostrar quantidade de cadastros" +       
-              "\n6 - Acessar Menu de Estatísticas" + 
-              "\n7 - SAIR", "",0,
+              "\n\n\n1 - Cadastrar Funcionário" + 
+              "\n\n2 - Editar Funcionário" + 
+              "\n\n3 - Buscar pelo Nome do Funcionário" +
+              "\n\n4 - Listar Funcionário" +
+              "\n\n5 - Mostrar quantidade de cadastros" +       
+              "\n\n6 - Acessar Menu de Estatísticas" + 
+              "\n\n7 - SAIR", "",0,
               new ImageIcon(CadastroProdutos.class.getResource("community.png")), 
               null, null).toString());
         }

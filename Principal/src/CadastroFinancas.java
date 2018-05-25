@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 import javax.swing.ImageIcon; 
 import javax.swing.JOptionPane;
 /**
  *
- * @author Alunos
+ * @author Matheus Ruan Werner
  */
 public class CadastroFinancas {
     
@@ -34,7 +30,13 @@ public class CadastroFinancas {
     
     public void solicitarCadastro(int j){
         
-        meses[j] = JOptionPane.showInputDialog("Informe o mês(por extenso) que deseja inserir as finanças");
+        meses[j] =  JOptionPane.showInputDialog(null,
+                "Meses", null, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
+                    "", "Janeiro", "Fevereiro","Março","Abril","Maio","Junho","Julho",
+                    "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+                },
+                ""
+        ).toString();
         contaLuz[j] = Double.parseDouble(JOptionPane.showInputDialog("Insira a conta de luz deste mês"));
         contaAgua[j] = Double.parseDouble(JOptionPane.showInputDialog("Insira a conta de água deste mês"));
         contaGas[j] = Double.parseDouble(JOptionPane.showInputDialog("Insira a conta de gás deste mês"));
@@ -128,13 +130,13 @@ public class CadastroFinancas {
     
     public void menuFinanças(){
         
-        int menuDasFinancas = Integer.parseInt(JOptionPane.showInputDialog(null,
-              "1 - Cadastrar Finanças do Mês" + 
-              "\n2 - Editar Finanças do Mês" + 
-              "\n3 - Buscar Finanças do Mês" +
-              "\n4 - Listar Vendas dos Mêses" +      
-              "\n5 - Acessar Menu de Estatísticas de Finanças" + 
-              "\n6 - SAIR", "",0,
+        int menuDasFinancas = Integer.parseInt(JOptionPane.showInputDialog(null,  "Digite o Código para acessar as Opções" +
+              "\n\n\n1 - Cadastrar Finanças do Mês" + 
+              "\n\n2 - Editar Finanças do Mês" + 
+              "\n\n3 - Buscar Finanças do Mês" +
+              "\n\n4 - Listar Vendas dos Mêses" +      
+              "\n\n5 - Acessar Menu de Estatísticas de Finanças" + 
+              "\n\n6 - SAIR", "",0,
               new ImageIcon(CadastroFinancas.class.getResource("banknote.png")), null, null).toString());
         
         while(menuDasFinancas != 6) {
@@ -153,14 +155,13 @@ public class CadastroFinancas {
                     JOptionPane.showMessageDialog(null, "Oppção Inválida");
             }
             
-            menuDasFinancas = Integer.parseInt(JOptionPane.showInputDialog(null,
-              "1 - Cadastrar Funcionário" + 
-              "\n2 - Editar Funcionário" + 
-              "\n3 - Buscar pelo Nome do Funcionário" +
-              "\n4 - Listar Funcionário" +
-              "\n5 - Mostrar quantidade de cadastros" +       
-              "\n6 - Acessar Menu de Estatísticas" + 
-              "\n7 - SAIR", "",0,
+            menuDasFinancas = Integer.parseInt(JOptionPane.showInputDialog(null,  "Digite o Código para acessar as Opções" +
+              "\n\n\n1 - Cadastrar Finanças do Mês" + 
+              "\n\n2 - Editar Finanças do Mês" + 
+              "\n\n3 - Buscar Finanças do Mês" +
+              "\n\n4 - Listar Vendas dos Mêses" +      
+              "\n\n5 - Acessar Menu de Estatísticas de Finanças" + 
+              "\n\n6 - SAIR", "",0,
               new ImageIcon(CadastroFinancas.class.getResource("banknote.png")), null, null).toString());
         }
     

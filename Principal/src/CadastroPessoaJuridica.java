@@ -136,7 +136,7 @@ public class CadastroPessoaJuridica {
                 case 6: estatisticasJuridica();
                     break;
                 default:
-                    JOptionPane.showMessageDialog(null, "Opção Inválida");
+                    JOptionPane.showMessageDialog(null, "Volte ao Menu Principal", "Opção Inválida", JOptionPane.WARNING_MESSAGE);
             }
             
             menuCadastroJuridica = Integer.parseInt(JOptionPane.showInputDialog(null,
