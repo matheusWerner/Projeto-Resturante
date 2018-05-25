@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  *
  * @author Patrick Otavio do Nacimento
  */
-public class ProjetoRestauranteProdutos {
+public class CadastroProdutos {
     
   
     
@@ -57,8 +57,9 @@ public class ProjetoRestauranteProdutos {
                 "\n4 - Buscar Produtos" +
                 "\n5 - Estatisticas" +
                 "\n6 - SAIR", "",0,
-                new ImageIcon(ProjetoRestauranteProdutos.class.getResource("restaurant.png")), 
+                new ImageIcon(CadastroProdutos.class.getResource("groceries-bag.png")), 
                 null, null).toString());
+        
         while(menuDosProdutos != 6){
             switch (menuDosProdutos) {
                 case 1:
@@ -80,13 +81,15 @@ public class ProjetoRestauranteProdutos {
                     JOptionPane.showMessageDialog(null, "Opção inválida");
                     
             }
-        menuDosProdutos = Integer.parseInt(JOptionPane.showInputDialog(
+        menuDosProdutos = Integer.parseInt(JOptionPane.showInputDialog(null,
                 "1 - Cadastrar Produtos" +
                 "\n2 - Editar Produtos" +
                 "\n3 - Listar Produtos" +
                 "\n4 - Buscar Produtos" +
                 "\n5 - Estatisticas" +
-                "\n6 - SAIR"));
+                "\n6 - SAIR", "",0,
+                new ImageIcon(CadastroProdutos.class.getResource("groceries-bag.png")), 
+                null, null).toString());
         }
         
     }

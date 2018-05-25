@@ -118,8 +118,8 @@ public class CadastroPessoaJuridica {
               "\n5 - Mostrar quantidade de cadastros" +       
               "\n6 - Acessar Menu de Estatísticas Juridica" + 
               "\n7 - SAIR", "",0,
-                new ImageIcon(ProjetoRestauranteProdutos.class.getResource("restaurant.png")), 
-                null, null).toString());
+              new ImageIcon(CadastroProdutos.class.getResource("lawyer.png")), 
+              null, null).toString());
         
         while(menuCadastroJuridica != 7) {
             switch (menuCadastroJuridica) {
@@ -139,14 +139,16 @@ public class CadastroPessoaJuridica {
                     JOptionPane.showMessageDialog(null, "Opção Inválida");
             }
             
-            menuCadastroJuridica = Integer.parseInt(JOptionPane.showInputDialog(
+            menuCadastroJuridica = Integer.parseInt(JOptionPane.showInputDialog(null,
               "1 - Cadastrar Pessoa Juridica" + 
               "\n2 - Editar Pessoa Juridica" + 
               "\n3 - Buscar pelo Nome da Pessoa Juridica" +
               "\n4 - Listar Pessoa Juridica" +
               "\n5 - Mostrar quantidade de Pessoa Juridica" +       
               "\n6 - Acessar Menu de Estatísticas de Pessoa Juridica" + 
-              "\n7 - SAIR"));
+              "\n7 - SAIR", "",0,
+              new ImageIcon(CadastroProdutos.class.getResource("lawyer.png")), 
+              null, null).toString());
         }
     
     }

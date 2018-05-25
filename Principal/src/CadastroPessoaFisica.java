@@ -1,4 +1,5 @@
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /*
@@ -113,14 +114,17 @@ public class CadastroPessoaFisica {
     
     public void menuCadastroFisica() {
         
-       int menuCadastroFisica = Integer.parseInt(JOptionPane.showInputDialog(
-              "1 - Cadastrar Funcionário" + 
-              "\n2 - Editar Funcionário" + 
-              "\n3 - Buscar pelo Nome do Funcionário" +
-              "\n4 - Listar Funcionário" +
-              "\n5 - Mostrar quantidade de cadastros" +       
-              "\n6 - Acessar Menu de Estatísticas" + 
-              "\n7 - SAIR"));
+       int menuCadastroFisica = Integer.parseInt(JOptionPane.showInputDialog(null,
+              "1 - Cadastrar Pessoa Fisica" + 
+              "\n2 - Editar Pessoa Fisica" + 
+              "\n3 - Buscar pelo Nome da Pessoa Fisica" +
+              "\n4 - Listar Pessoa Fisica" +
+              "\n5 - Mostrar quantidade de Pessoa Fisica" +       
+              "\n6 - Acessar Menu de Estatísticas de Pessoa Fisica" + 
+              "\n7 - SAIR", "",0,
+              new ImageIcon(CadastroProdutos.class.getResource("man.png")), 
+              null, null).toString());
+        
         
         while(menuCadastroFisica != 7) {
             switch (menuCadastroFisica) {
@@ -140,14 +144,16 @@ public class CadastroPessoaFisica {
                     JOptionPane.showMessageDialog(null, "Opção Inválida");
             }
             
-            menuCadastroFisica = Integer.parseInt(JOptionPane.showInputDialog(
+            menuCadastroFisica = Integer.parseInt(JOptionPane.showInputDialog(null,
               "1 - Cadastrar Pessoa Fisica" + 
               "\n2 - Editar Pessoa Fisica" + 
               "\n3 - Buscar pelo Nome da Pessoa Fisica" +
               "\n4 - Listar Pessoa Fisica" +
               "\n5 - Mostrar quantidade de Pessoa Fisica" +       
               "\n6 - Acessar Menu de Estatísticas de Pessoa Fisica" + 
-              "\n7 - SAIR"));
+              "\n7 - SAIR", "",0,
+              new ImageIcon(CadastroProdutos.class.getResource("man.png")), 
+              null, null).toString());
         }
     
     }

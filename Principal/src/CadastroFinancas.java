@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import javax.swing.ImageIcon; 
 import javax.swing.JOptionPane;
 /**
  *
  * @author Alunos
  */
-public class CadastroDespesas {
+public class CadastroFinancas {
     
     double contaLuz[] = new double[12];
     double contaAgua[] = new double[12];
@@ -127,16 +128,17 @@ public class CadastroDespesas {
     
     public void menuFinanças(){
         
-        int menuDosFuncionarios = Integer.parseInt(JOptionPane.showInputDialog(
+        int menuDasFinancas = Integer.parseInt(JOptionPane.showInputDialog(null,
               "1 - Cadastrar Finanças do Mês" + 
               "\n2 - Editar Finanças do Mês" + 
               "\n3 - Buscar Finanças do Mês" +
               "\n4 - Listar Vendas dos Mêses" +      
               "\n5 - Acessar Menu de Estatísticas de Finanças" + 
-              "\n6 - SAIR"));
+              "\n6 - SAIR", "",0,
+              new ImageIcon(CadastroFinancas.class.getResource("banknote.png")), null, null).toString());
         
-        while(menuDosFuncionarios != 7) {
-            switch (menuDosFuncionarios) {
+        while(menuDasFinancas != 6) {
+            switch (menuDasFinancas) {
                 case 1: cadastrar(); 
                     break;
                 case 2: editar();
@@ -151,14 +153,15 @@ public class CadastroDespesas {
                     JOptionPane.showMessageDialog(null, "Oppção Inválida");
             }
             
-            menuDosFuncionarios = Integer.parseInt(JOptionPane.showInputDialog(
+            menuDasFinancas = Integer.parseInt(JOptionPane.showInputDialog(null,
               "1 - Cadastrar Funcionário" + 
               "\n2 - Editar Funcionário" + 
               "\n3 - Buscar pelo Nome do Funcionário" +
               "\n4 - Listar Funcionário" +
               "\n5 - Mostrar quantidade de cadastros" +       
               "\n6 - Acessar Menu de Estatísticas" + 
-              "\n7 - SAIR"));
+              "\n7 - SAIR", "",0,
+              new ImageIcon(CadastroFinancas.class.getResource("banknote.png")), null, null).toString());
         }
     
     }

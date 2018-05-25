@@ -3,7 +3,7 @@
  *
  * @author Alunos
  */
-
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 
@@ -96,10 +96,10 @@ public class CadastroFuncionario {
     }
     
     public void buscarPeloNome () {
-        String busca = JOptionPane.showInputDialog("Digite o nome parcial para a busca");
+        String busca = JOptionPane.showInputDialog("Digite o nome parcial para a busca").toLowerCase();
         
         for (int i = 0; i < atual; i++) {
-            if(nomes[i].contains(busca)) {
+            if(nomes[i].toLowerCase().contains(busca)) {
                 JOptionPane.showMessageDialog(null,
                        "Nome: " + nomes[i] +
                        "\nIdade: " + idades[i] +
@@ -120,14 +120,16 @@ public class CadastroFuncionario {
     
     public void menuFuncionario() {
         
-       int menuDosFuncionarios = Integer.parseInt(JOptionPane.showInputDialog(
-              "1 - Cadastrar Funcionário" + 
-              "\n2 - Editar Funcionário" + 
-              "\n3 - Buscar pelo Nome do Funcionário" +
-              "\n4 - Listar Funcionário" +
-              "\n5 - Mostrar quantidade de cadastros" +       
-              "\n6 - Acessar Menu de Estatísticas" + 
-              "\n7 - SAIR"));
+       int menuDosFuncionarios = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o Código para acessar as Informações" +
+              "\n\n1 - Cadastrar Funcionário" + 
+              "\n\n2 - Editar Funcionário" + 
+              "\n\n3 - Buscar pelo Nome do Funcionário" +
+              "\n\n4 - Listar Funcionário" +
+              "\n\n5 - Mostrar quantidade de cadastros" +       
+              "\n\n6 - Acessar Menu de Estatísticas" + 
+              "\n\n7 - SAIR", "",0,
+              new ImageIcon(CadastroProdutos.class.getResource("community.png")), 
+              null, null).toString());
         
         while(menuDosFuncionarios != 7) {
             switch (menuDosFuncionarios) {
@@ -147,14 +149,16 @@ public class CadastroFuncionario {
                     JOptionPane.showMessageDialog(null, "Oppção Inválida");
             }
             
-            menuDosFuncionarios = Integer.parseInt(JOptionPane.showInputDialog(
+            menuDosFuncionarios = Integer.parseInt(JOptionPane.showInputDialog(null,
               "1 - Cadastrar Funcionário" + 
               "\n2 - Editar Funcionário" + 
               "\n3 - Buscar pelo Nome do Funcionário" +
               "\n4 - Listar Funcionário" +
               "\n5 - Mostrar quantidade de cadastros" +       
               "\n6 - Acessar Menu de Estatísticas" + 
-              "\n7 - SAIR"));
+              "\n7 - SAIR", "",0,
+              new ImageIcon(CadastroProdutos.class.getResource("community.png")), 
+              null, null).toString());
         }
     
     }
@@ -177,10 +181,12 @@ public class CadastroFuncionario {
     
     public void menuEstatistica() {
         
-        int menuDasEstatisticas = Integer.parseInt(JOptionPane.showInputDialog(
+        int menuDasEstatisticas = Integer.parseInt(JOptionPane.showInputDialog(null,
               "1 - Média de Idade do Restaurante" + 
               "\n2 - Média de Salário do Restaurante" +       
-              "\n3 - SAIR"));
+              "\n3 - SAIR", "",0,
+              new ImageIcon(CadastroProdutos.class.getResource("bars.png")), 
+              null, null).toString());
         
         while(menuDasEstatisticas != 3) {
             switch (menuDasEstatisticas) {
@@ -192,7 +198,9 @@ public class CadastroFuncionario {
             menuDasEstatisticas = Integer.parseInt(JOptionPane.showInputDialog(null,
               "1 - Funcionários"
             + "\n2 - Fornecimento de Produtos"
-            + "\n3 - SAIR"));
+            + "\n3 - SAIR", "",0,
+              new ImageIcon(CadastroProdutos.class.getResource("bars.png")), 
+              null, null).toString());
         }
         
     }
@@ -206,7 +214,7 @@ public class CadastroFuncionario {
          mediaSalario = mediaSalario + salarios[i];
          
         }
-        JOptionPane.showMessageDialog(null, "A média de salário do Restaurante é: " + mediaSalario / atual);
+        JOptionPane.showMessageDialog(null, "A média de salário do Restaurante é: R$" + mediaSalario / atual);
         
     }
     
@@ -218,9 +226,12 @@ public class CadastroFuncionario {
             
             mediaIdade = mediaIdade + idades[i]; 
         }
-        JOptionPane.showMessageDialog(null, "A média de idade dos funcionários do Restaurante é: " + mediaIdade / atual);
+        if (atual == 0) {
+            JOptionPane.showMessageDialog(null, "Nao é possível verificar a média");
+        } else {
+        JOptionPane.showMessageDialog(null, "A média de idade dos funcionários do Restaurante é: " + mediaIdade / atual + " anos.");
         
-        
+        } 
         
         
     }
