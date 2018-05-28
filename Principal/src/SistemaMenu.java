@@ -1,9 +1,10 @@
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
 /**
  *
- * @author Alunos
+ * @author Matheus Werner e Patrick Nascimento
  */
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
 public class SistemaMenu {
     
     CadastroFuncionario registroFuncionario = new CadastroFuncionario();
@@ -45,9 +46,7 @@ public void menuSistema() {
                 case 4: registroFinancas.menuFinanças();
                     break;
                 case 5: regitroSobre.sobreRestaurante();
-                    break;
-                default:
-                    JOptionPane.showMessageDialog(null, "Oppção Inválida");
+                    break;         
                     
              } 
              
