@@ -170,6 +170,17 @@ public class CadastroPessoaJuridica {
     
     public void estatisticasJuridica(){
         
+        double mediaRecebidoJuridica = 0;
+        
+        for (int i = 0; i < atual; i++) {
+            
+         mediaRecebidoJuridica = mediaRecebidoJuridica + pagamentos[i];
+         
+        }
+        JOptionPane.showMessageDialog(null, "A média de recebimento pessoa juridica é: R$" + mediaRecebidoJuridica / atual);
+        
+    
+        
     }
     
     

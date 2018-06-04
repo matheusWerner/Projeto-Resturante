@@ -20,6 +20,7 @@ public class CadastroProdutos {
     String medidas[] = new String[5];
     String dia[] = new String[5];
     
+    
     int atual = 0;
     
     public void cadastroProdutos(){
@@ -96,6 +97,14 @@ public class CadastroProdutos {
     
     public void estatisticas(){
         
+        double mediaFornecido = 0;
+        
+        for (int i = 0; i < atual; i++) {
+            
+         mediaFornecido = mediaFornecido + transportadoras;
+         
+        }
+        JOptionPane.showMessageDialog(null, "A média de produtos fornecida para o estaurante é: R$" + mediaFornecido / atual);
         
         
     }
