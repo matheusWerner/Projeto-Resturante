@@ -12,7 +12,7 @@ public class SistemaMenu {
     CadastroFinancas registroFinancas = new CadastroFinancas();
     CadastroPessoaJuridica registroJuridica = new CadastroPessoaJuridica();
     CadastroPessoaFisica registroFisica = new CadastroPessoaFisica();
-    Sobre registroSobre = new Sobre(); 
+    Sobre regitroSobre = new Sobre(); 
 
 public void menuSistema() {
     
@@ -25,7 +25,7 @@ public void menuSistema() {
                 "Produtos",
                 "Pessoa Física",
                 "Pessoa Jurídica",
-                "Finanças",
+                "Financas",
                 "Sobre",
                 }
                 , null);
@@ -43,17 +43,10 @@ public void menuSistema() {
                     break;
                 case 3: registroJuridica.menuCadastroJuridica();
                     break;
-                case 4: registroFinancas.menuFinanças();
+                case 4: registroFinancas.menuFinancas();
                     break;
-<<<<<<< HEAD
-                case 5: registroSobre.sobreRestaurante();
-                    break;
-                default:
-                    JOptionPane.showMessageDialog(null, "Oppção Inválida");
-=======
                 case 5: regitroSobre.sobreRestaurante();
                     break;         
->>>>>>> 37f631ae2daba63696bfccf7320b71fdab933ee8
                     
              } 
              
@@ -62,11 +55,11 @@ public void menuSistema() {
                 JOptionPane.INFORMATION_MESSAGE, 
                 new ImageIcon(SistemaMenu.class.getResource("restaurant.png")),
                 new Object[]{
-                "Funcionários",
+                "FuncionÃ¡rios",
                 "Produtos",
                 "Pessoa Física",
                 "Pessoa Jurídica",
-                "Finanças",
+                "Financas",
                 "Sobre",
                 }
                 , null);

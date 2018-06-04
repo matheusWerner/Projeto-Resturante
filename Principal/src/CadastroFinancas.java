@@ -22,10 +22,6 @@ public class CadastroFinancas {
     double despesas[] = new double[12];
     double ganhos[] = new double[12];
     double balanco[] = new double[12];
-<<<<<<< HEAD
-    
-=======
->>>>>>> 37f631ae2daba63696bfccf7320b71fdab933ee8
     
     
     
@@ -118,7 +114,7 @@ public class CadastroFinancas {
         
         String busca = JOptionPane.showInputDialog(null,
                 "Mês", null, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
-                    "","Janeiro", "Fevereiro","Março","Abril","Maio","Junho","Julho",
+                    "","Janeiro", "Fevereiro","MarÇo","Abril","Maio","Junho","Julho",
                     "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
                 },
                 ""
@@ -142,29 +138,18 @@ public class CadastroFinancas {
         }
     }
     
-    public void menuFinanças(){
+    public void menuFinancas(){
         
-<<<<<<< HEAD
-        int menuDasFinancas = Integer.parseInt(JOptionPane.showInputDialog(null,  "Digite o Código para acessar as Opções" +
-              "\n\n\n1 - Cadastrar Finanças do Mês" + 
-              "\n\n2 - Editar Finanças do Mês" + 
-              "\n\n3 - Buscar Finanças do Mês" +
-              "\n\n4 - Listar Vendas dos Mêses" +      
-              "\n\n5 - Acessar Menu de Estatísticas de Finanças" + 
-              "\n\n6 - VOLTAR", "",0,
-              new ImageIcon(CadastroFinancas.class.getResource("banknote.png")), null, null).toString());
-=======
         int menuDasFinancas = Integer.parseInt(JOptionPane.showInputDialog(null, 
               "Digite o Código para acessar as Opções" +
-              "\n\nCÓDIGO  |      OPÇÃO" +       
-              "\n\n1               |      Cadastrar Finanças do Mês" + 
+              "\n\nCóDIGO  |      OPÇÃO" +       
+              "\n\n1               |      Cadastrar FinanÇas do Mês" + 
               "\n\n2               |      Editar Finanças do Mês" + 
               "\n\n3               |      Buscar Finanças do Mês" +
-              "\n\n4               |      Listar Vendas dos Mêses" +      
+              "\n\n4               |      Listar Vendas dos Meses" +      
               "\n\n5               |      Acessar Menu de Estatísticas de Finanças" + 
               "\n\n6               |      VOLTAR", "Menu de Finanças",0,
               new ImageIcon(CadastroFinancas.class.getResource("banknote.png")), null, null).toString().trim());
->>>>>>> 37f631ae2daba63696bfccf7320b71fdab933ee8
         
         while(menuDasFinancas != 6) {
             switch (menuDasFinancas) {
@@ -179,16 +164,16 @@ public class CadastroFinancas {
                 case 5: menuEstatisticas();
                     break;
                 default:
-                    JOptionPane.showMessageDialog(null, "Opção Inválida", "ERROR", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "OPÇÃO INVÁLIDA", "ERROR", JOptionPane.WARNING_MESSAGE);
             }
             
             menuDasFinancas = Integer.parseInt(JOptionPane.showInputDialog(null,  
               "Digite o Código para acessar as Opções" +
               "\n\nCÓDIGO  |      OPÇÃO" +       
-              "\n\n1               |      Cadastrar Finanças do Mês" + 
+              "\n\n1               |      Cadastrar FinanÇas do Mês" + 
               "\n\n2               |      Editar Finanças do Mês" + 
               "\n\n3               |      Buscar Finanças do Mês" +
-              "\n\n4               |      Listar Vendas dos Mêses" +      
+              "\n\n4               |      Listar Vendas dos Meses" +      
               "\n\n5               |      Acessar Menu de Estatísticas de Finanças" + 
               "\n\n6               |      VOLTAR", "Menu de Finanças",0,
               new ImageIcon(CadastroFinancas.class.getResource("banknote.png")), null, null).toString().trim());
@@ -198,13 +183,6 @@ public class CadastroFinancas {
     
     public void menuEstatisticas(){
         
-<<<<<<< HEAD
-         int menuDasEstatisticas = Integer.parseInt(JOptionPane.showInputDialog(
-              "1 - Total do Valor das Despesas no Mês" + 
-              "\n2 - Total do Valor de Recebimento do Mês" +
-              "\n3 - Acessar o balanço do Mês" +    
-              "\n4 - VOLTAR"));
-=======
          int menuDasEstatisticas = Integer.parseInt(JOptionPane.showInputDialog(null, 
               "Digite o Código para acessar as Opções" +
               "\n\nCÓDIGO  |      OPÇÃO" +
@@ -213,31 +191,18 @@ public class CadastroFinancas {
               "\n\n3               |      Acessar o balanço do Mês" +      
               "\n\n4               |      VOLTAR", "Menu de Estatísticas",0,
               new ImageIcon(CadastroFinancas.class.getResource("bar-chart.png")), null, null).toString());
->>>>>>> 37f631ae2daba63696bfccf7320b71fdab933ee8
         
         while(menuDasEstatisticas != 4) {
             switch (menuDasEstatisticas) {
-<<<<<<< HEAD
-                case 1: estatisticasDespesasMes();
-=======
                 case 1: estatisticaDespesasMes();
->>>>>>> 37f631ae2daba63696bfccf7320b71fdab933ee8
                         break;
                 case 2: estatiscaGanhosMes();
                         break;
                 case 3: balancoMes();
                         break;
-<<<<<<< HEAD
-            }
-            menuDasEstatisticas = Integer.parseInt(JOptionPane.showInputDialog(null,
-              "1 - Total do Valor das Despesas no Mês" + 
-              "\n2 - Total do Valor de Recebimento do Mês" +
-              "\n3 - Acessar o balanço do Mês" +    
-              "\n4 - VOLTAR"));
-=======
                 default:
                     
-                    JOptionPane.showMessageDialog(null, "Opção Inválida", "ERROR", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "OpÃ§Ã£o InvÃ¡lida", "ERROR", JOptionPane.WARNING_MESSAGE);
                  }
             menuDasEstatisticas = Integer.parseInt(JOptionPane.showInputDialog(null, 
               "Digite o Código para acessar as Opções" +
@@ -247,7 +212,6 @@ public class CadastroFinancas {
               "\n\n3               |      Acessar o balanço do Mês" +      
               "\n\n4               |      VOLTAR", "Menu de Estatísticas",0,
               new ImageIcon(CadastroFinancas.class.getResource("bar-chart .png")), null, null).toString());
->>>>>>> 37f631ae2daba63696bfccf7320b71fdab933ee8
         }
         
     }
@@ -260,7 +224,7 @@ public class CadastroFinancas {
         for (int i = 0; i < atual; i++) {
             
         busca =   JOptionPane.showInputDialog(null,
-                "Mes", null, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
+                "Mês", null, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
                     "Janeiro", "Fevereiro","Março","Abril","Maio","Junho","Julho",
                     "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
                 },
@@ -287,71 +251,26 @@ public class CadastroFinancas {
     
     public void estatiscaGanhosMes() {
         
-<<<<<<< HEAD
-      
-=======
->>>>>>> 37f631ae2daba63696bfccf7320b71fdab933ee8
         String busca = "";
         
     
         for (int i = 0; i < atual; i++) {
             
         busca =   JOptionPane.showInputDialog(null,
-<<<<<<< HEAD
                 "Mês", null, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
-=======
-                "Mes", null, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
->>>>>>> 37f631ae2daba63696bfccf7320b71fdab933ee8
                     "Janeiro", "Fevereiro","Março","Abril","Maio","Junho","Julho",
                     "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
                 },
                 ""
         ).toString();
         
-<<<<<<< HEAD
-        despesas[i] = contaLuz[i] + 
-                      contaAgua[i] + 
-                      contaGas[i] + 
-                      aluguel[i] + 
-                      marketing[i] +
-                      folhaPagamento[i];
-        
-       
-        
-        JOptionPane.showMessageDialog(null, "O valor total das despesas desse més é:  R$" + despesas[i]);
-        
-        }
-        
-    }
-    
-    public void estatiscaGanhosMes() {
-        
-        String busca = "";
-        
-    
-        for (int i = 0; i < atual; i++) {
-            
-        busca =   JOptionPane.showInputDialog(null,
-                "Mês", null, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
-                    "Janeiro", "Fevereiro","Marçoo","Abril","Maio","Junho","Julho",
-                    "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
-                },
-                ""
-        ).toString();
-        
-=======
->>>>>>> 37f631ae2daba63696bfccf7320b71fdab933ee8
         ganhos[i] = eventos[i] + 
                     vendas[i];
                      
         
        
         
-<<<<<<< HEAD
-        JOptionPane.showMessageDialog(null, "O valor total das despesas desse més é:  R$" + ganhos[i]);
-=======
         JOptionPane.showMessageDialog(null, "O valor total das despesas desse mês é:  R$" + ganhos[i]);
->>>>>>> 37f631ae2daba63696bfccf7320b71fdab933ee8
         
              
         }
@@ -370,27 +289,16 @@ public class CadastroFinancas {
         for (int i = 0; i < atual; i++) {
             
         busca =   JOptionPane.showInputDialog(null,
-                "Mes", null, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
-<<<<<<< HEAD
-                    "Janeiro", "Fevereiro","MarÃ§o","Abril","Maio","Junho","Julho",
-=======
+                "Mês", null, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
                     "Janeiro", "Fevereiro","Março","Abril","Maio","Junho","Julho",
->>>>>>> 37f631ae2daba63696bfccf7320b71fdab933ee8
                     "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
                 },
                 ""
         ).toString();
-<<<<<<< HEAD
         
         ganhos[i] = eventos[i] + 
                     vendas[i];
         
-=======
-        
-        ganhos[i] = eventos[i] + 
-                    vendas[i];
-        
->>>>>>> 37f631ae2daba63696bfccf7320b71fdab933ee8
          despesas[i] = contaLuz[i] + 
                        contaAgua[i] + 
                        contaGas[i] + 
@@ -406,11 +314,7 @@ public class CadastroFinancas {
              JOptionPane.showMessageDialog(null, "Lucro de:  R$" + balanco[i]);
          } else {
              balanco[i] = ganhos[i] - despesas[i];
-<<<<<<< HEAD
-             JOptionPane.showMessageDialog(null, "PrejuÃ­zo de:  R$" + balanco[i]);
-=======
              JOptionPane.showMessageDialog(null, "Prejuízo de:  R$" + balanco[i]);
->>>>>>> 37f631ae2daba63696bfccf7320b71fdab933ee8
          }
                      
         
@@ -422,7 +326,6 @@ public class CadastroFinancas {
         
         
     }
-
     
     
     

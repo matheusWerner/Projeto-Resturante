@@ -101,7 +101,7 @@ public class CadastroProdutos {
         
         for (int i = 0; i < atual; i++) {
             
-         mediaFornecido = mediaFornecido + transportadoras;
+            
          
         }
         JOptionPane.showMessageDialog(null, "A média de produtos fornecida para o estaurante é: R$" + mediaFornecido / atual);
