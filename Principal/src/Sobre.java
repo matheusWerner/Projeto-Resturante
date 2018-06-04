@@ -1,13 +1,17 @@
+<<<<<<< HEAD
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 import javax.swing.ImageIcon;
+=======
+>>>>>>> 37f631ae2daba63696bfccf7320b71fdab933ee8
 import javax.swing.JOptionPane;
+import javax.swing.ImageIcon;
 /**
  *
- * @author Alunos
+ * @author Matheus Ruan Werner
  */
 public class Sobre {
     

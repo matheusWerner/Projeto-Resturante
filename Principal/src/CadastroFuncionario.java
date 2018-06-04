@@ -1,15 +1,19 @@
-
 /**
  *
  * @author Matheus Ruan Werner
  */
+
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 
 
 public class CadastroFuncionario {
+<<<<<<< HEAD
         
+=======
+    
+>>>>>>> 37f631ae2daba63696bfccf7320b71fdab933ee8
     String[] cargos = new String[50];
     String[] contatos = new String[50];
     String[] nomes = new String[50];
@@ -34,13 +38,26 @@ public class CadastroFuncionario {
     public void solicitarCadastro(int x) {
         
         nomes[x] = JOptionPane.showInputDialog("Insira seu nome").trim();
-        idades[x] = Integer.parseInt(JOptionPane.showInputDialog(nomes[0] + " digite a sua idade").trim());
+        
+        try {
+        idades[x] = Integer.parseInt(JOptionPane.showInputDialog(nomes[0] + " informe a sua idade").trim());
+        salarios[x] = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor do salário").trim());
+        }
+        catch (NumberFormatException e)
+        {
+        JOptionPane.showMessageDialog(null, "Digite Somente Números");
+        return;
+        }
+        
+        
+        
         sexos[x] = JOptionPane.showInputDialog(null,
                 "Sexo", null, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
                     "", "Masculino", "Feminino"
                 },
                 ""
         ).toString();
+<<<<<<< HEAD
         cpfs[x] = JOptionPane.showInputDialog(nomes[0] + " digite o seu CPF").replace(".","").replace("-","").trim();
         cargos[x] = JOptionPane.showInputDialog(null,
                 "Cargo", null, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
@@ -53,14 +70,31 @@ public class CadastroFuncionario {
         ceps[x] = JOptionPane.showInputDialog("Digite o seu CEP").replace("-","").trim();
         numeros[x] = JOptionPane.showInputDialog("Digite o seu número").replace(".","").replace("-","");
         complementos[x] = JOptionPane.showInputDialog("Digite o complemento").trim();
+=======
+        cpfs[x] = JOptionPane.showInputDialog(nomes[0] + " informe o  CPF").replace(".","").replace("-","").trim();
+        cargos[x] = JOptionPane.showInputDialog("Informe o cargo").trim();
+        contatos[x] = JOptionPane.showInputDialog("Informe o número de contato").trim();
+        cidades[x] = JOptionPane.showInputDialog("Informe a cidade").trim();
+        bairros[x] = JOptionPane.showInputDialog("Informe o bairro").trim();
+        ceps[x] = JOptionPane.showInputDialog("Informe o CEP").replace("-","").trim();
+        numeros[x] = JOptionPane.showInputDialog("Informe o número de residência").replace(".","").replace("-","");
+        complementos[x] = JOptionPane.showInputDialog("Informe o complemento").trim();
+>>>>>>> 37f631ae2daba63696bfccf7320b71fdab933ee8
         empregoAnterior[x] = JOptionPane.showInputDialog("Informe o emprego anterior").trim();
         estadoCivil[x] = JOptionPane.showInputDialog(null,
                 "Estado Civil", null, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
                     "", "Solteiro(a)", "Casado(a)","Divorciado(a)", "Viuvo(a)"
+<<<<<<< HEAD
                          },"").toString();
         
        
 
+=======
+                        
+                },
+                ""
+        ).toString();
+>>>>>>> 37f631ae2daba63696bfccf7320b71fdab933ee8
         
 
        
@@ -71,7 +105,7 @@ public class CadastroFuncionario {
         
         String texto = "";
         for (int i = 0; i < atual; i++) {
-            texto += nomes[i] +  "   " + cpfs[i] + "\n";
+            texto += "Nome: " + nomes[i] +  "   " + "CPF: " + cpfs[i] + "\n";
         }
         JOptionPane.showMessageDialog(null, texto);
         
@@ -96,6 +130,8 @@ public class CadastroFuncionario {
                        "Nome: " + nomes[i] +
                        "\nIdade: " + idades[i] +
                        "\nCPF: " + cpfs[i] +
+                       "\nCargo" + cargos[i] +
+                       "\nContato" + contatos[i] +                                       
                        "\nEmprego Anterior: " + empregoAnterior[i] +
                        "\nCidade: " + cidades[i] +
                        "\nBairro: " + bairros[i] +
@@ -136,6 +172,7 @@ public class CadastroFuncionario {
         
        int menuDosFuncionarios = Integer.parseInt(JOptionPane.showInputDialog(null, 
               "Digite o Código para acessar as Opções" +
+<<<<<<< HEAD
               "\n\n\n1 - Cadastrar Funcionário" + 
               "\n\n2 - Editar Funcionário" + 
               "\n\n3 - Buscar pelo Nome do Funcionário" +
@@ -143,10 +180,21 @@ public class CadastroFuncionario {
               "\n\n5 - Mostrar quantidade de cadastros" +       
               "\n\n6 - Acessar Menu de Estatísticas" + 
               "\n\n7 - VOLTAR", "",0,
+=======
+              "\n\nCÓDIGO  |      OPÇÃO" +
+              "\n\n1               |      Cadastrar Funcionário" + 
+              "\n\n2               |      Editar Funcionário" + 
+              "\n\n3               |      Buscar pelo Nome do Funcionário" +
+              "\n\n4               |      Listar Funcionário" +
+              "\n\n5               |      Mostrar quantidade de cadastros" +       
+              "\n\n6               |      Acessar Menu de Estatísticas" +
+              "\n\n7               |      Acessar Folha de Pagamento" +        
+              "\n\n8               |      VOLTAR", "Menu de Funcionários",0,
+>>>>>>> 37f631ae2daba63696bfccf7320b71fdab933ee8
               new ImageIcon(CadastroProdutos.class.getResource("community.png")), 
-              null, null).toString());
+              null, null).toString().trim());
         
-        while(menuDosFuncionarios != 7) {
+        while(menuDosFuncionarios != 8) {
             switch (menuDosFuncionarios) {
                 case 1: cadastrar(); 
                     break;
@@ -160,20 +208,25 @@ public class CadastroFuncionario {
                     break;
                 case 6: menuEstatistica();
                     break;
+                case 7: folhaDePagamento();
+                    break;
                 default:
-                    JOptionPane.showMessageDialog(null, "Oppção Inválida");
+                   JOptionPane.showMessageDialog(null, "Opção Inválida", "ERROR", JOptionPane.WARNING_MESSAGE);
             }
             
             menuDosFuncionarios = Integer.parseInt(JOptionPane.showInputDialog(null,
-              "\n\n\n1 - Cadastrar Funcionário" + 
-              "\n\n2 - Editar Funcionário" + 
-              "\n\n3 - Buscar pelo Nome do Funcionário" +
-              "\n\n4 - Listar Funcionário" +
-              "\n\n5 - Mostrar quantidade de cadastros" +       
-              "\n\n6 - Acessar Menu de Estatísticas" + 
-              "\n\n7 - SAIR", "",0,
+              "Digite o Código para acessar as Opções" +
+              "\n\nCÓDIGO  |      OPÇÃO" +
+              "\n\n1               |      Cadastrar Funcionário" + 
+              "\n\n2               |      Editar Funcionário" + 
+              "\n\n3               |      Buscar pelo Nome do Funcionário" +
+              "\n\n4               |      Listar Funcionário" +
+              "\n\n5               |      Mostrar quantidade de cadastros" +       
+              "\n\n6               |      Acessar Menu de Estatísticas" +
+              "\n\n7               |      Acessar Folha de Pagamento" +        
+              "\n\n8               |      VOLTAR", "Menu de Funcionários",0,
               new ImageIcon(CadastroProdutos.class.getResource("community.png")), 
-              null, null).toString());
+              null, null).toString().trim());
         }
     
     }
@@ -196,12 +249,14 @@ public class CadastroFuncionario {
     
     public void menuEstatistica() {
         
-        int menuDasEstatisticas = Integer.parseInt(JOptionPane.showInputDialog(null,
-              "1 - Média de Idade do Restaurante" + 
-              "\n2 - Média de Salário do Restaurante" +       
-              "\n3 - SAIR", "",0,
+        int menuDasEstatisticas = Integer.parseInt(JOptionPane.showInputDialog(null, 
+              "Digite o Código para acessar as Opções" +
+              "\n\nCÓDIGO  |      OPÇÃO" +     
+              "\n\n1               |      Média de Idade do Restaurante" + 
+              "\n\n2               |      Média de Salário do Restaurante" +       
+              "\n\n3               |      VOLTAR", "Menu de Estatísticas",0,
               new ImageIcon(CadastroProdutos.class.getResource("bars.png")), 
-              null, null).toString());
+              null, null).toString().trim());
         
         while(menuDasEstatisticas != 3) {
             switch (menuDasEstatisticas) {
@@ -209,13 +264,17 @@ public class CadastroFuncionario {
                         break;
                 case 2: estatisticaSalario();
                         break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Opção Inválida", "ERROR", JOptionPane.WARNING_MESSAGE);
             }
             menuDasEstatisticas = Integer.parseInt(JOptionPane.showInputDialog(null,
-              "1 - Funcionários"
-            + "\n2 - Fornecimento de Produtos"
-            + "\n3 - SAIR", "",0,
+              "Digite o Código para acessar as Opções" +
+              "\n\nCÓDIGO  |      OPÇÃO" +     
+              "\n\n1               |      Média de Idade do Restaurante" + 
+              "\n\n2               |      Média de Salário do Restaurante" +       
+              "\n\n3               |      VOLTAR", "Menu de Estatísticas",0,
               new ImageIcon(CadastroProdutos.class.getResource("bars.png")), 
-              null, null).toString());
+              null, null).toString().trim());
         }
         
     }
@@ -262,7 +321,11 @@ public class CadastroFuncionario {
             
             JOptionPane.showMessageDialog(null, "Folha Salarial: R$ " + salarios[i]);
         }
+<<<<<<< HEAD
         
+=======
+       
+>>>>>>> 37f631ae2daba63696bfccf7320b71fdab933ee8
     }
     
 }
