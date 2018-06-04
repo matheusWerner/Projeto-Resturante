@@ -10,6 +10,8 @@ import javax.swing.JOptionPane;
 
 public class CadastroFuncionario {
         
+    String[] cargos = new String[50];
+    String[] contatos = new String[50];
     String[] nomes = new String[50];
     int[] idades = new int[50];
     String[] sexos = new String[50];
@@ -40,6 +42,11 @@ public class CadastroFuncionario {
                 ""
         ).toString();
         cpfs[x] = JOptionPane.showInputDialog(nomes[0] + " digite o seu CPF").replace(".","").replace("-","").trim();
+        cargos[x] = JOptionPane.showInputDialog(null,
+                "Cargo", null, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
+                    "", "Barman", "Cheff","Garçom/Garçonete", "Ajudante de Cozinha","Faxineiro(a)"
+                         },"").toString();
+        contatos[x] = JOptionPane.showInputDialog("Informe o número de contato").trim();
         cidades[x] = JOptionPane.showInputDialog("Digite a sua cidade").trim();
         salarios[x] = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor do salário").trim());
         bairros[x] = JOptionPane.showInputDialog("Digite o seu bairro").trim();
@@ -47,7 +54,13 @@ public class CadastroFuncionario {
         numeros[x] = JOptionPane.showInputDialog("Digite o seu número").replace(".","").replace("-","");
         complementos[x] = JOptionPane.showInputDialog("Digite o complemento").trim();
         empregoAnterior[x] = JOptionPane.showInputDialog("Informe o emprego anterior").trim();
-        estadoCivil[x] = JOptionPane.showInputDialog("Informe o estado civil").trim();
+        estadoCivil[x] = JOptionPane.showInputDialog(null,
+                "Estado Civil", null, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
+                    "", "Solteiro(a)", "Casado(a)","Divorciado(a)", "Viuvo(a)"
+                         },"").toString();
+        
+       
+
         
 
        
@@ -129,7 +142,7 @@ public class CadastroFuncionario {
               "\n\n4 - Listar Funcionário" +
               "\n\n5 - Mostrar quantidade de cadastros" +       
               "\n\n6 - Acessar Menu de Estatísticas" + 
-              "\n\n7 - SAIR", "",0,
+              "\n\n7 - VOLTAR", "",0,
               new ImageIcon(CadastroProdutos.class.getResource("community.png")), 
               null, null).toString());
         
@@ -238,9 +251,26 @@ public class CadastroFuncionario {
         
     }
     
-    
-    
-    
-    
+    public void folhaDePagamento() {
+        
+        double totalSalarios = 0;
+        
+        
+        for (int i = 0; i < atual; i++) {
+            
+            totalSalarios = totalSalarios + salarios[i];
+            
+            JOptionPane.showMessageDialog(null, "Folha Salarial: R$ " + salarios[i]);
+        }
+        
+    }
     
 }
+
+
+
+    
+    
+    
+    
+ 

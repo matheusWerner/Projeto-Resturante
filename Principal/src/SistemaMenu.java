@@ -11,7 +11,7 @@ public class SistemaMenu {
     CadastroFinancas registroFinancas = new CadastroFinancas();
     CadastroPessoaJuridica registroJuridica = new CadastroPessoaJuridica();
     CadastroPessoaFisica registroFisica = new CadastroPessoaFisica();
-    Sobre regitroSobre = new Sobre(); 
+    Sobre registroSobre = new Sobre(); 
 
 public void menuSistema() {
     
@@ -44,7 +44,7 @@ public void menuSistema() {
                     break;
                 case 4: registroFinancas.menuFinanças();
                     break;
-                case 5: regitroSobre.sobreRestaurante();
+                case 5: registroSobre.sobreRestaurante();
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Oppção Inválida");

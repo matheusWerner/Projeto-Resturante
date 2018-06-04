@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 /**
  *
@@ -14,8 +14,16 @@ public class Sobre {
     public void sobreRestaurante() {
         
         
-        JOptionPane.showMessageDialog(null, "");
+        JOptionPane.showMessageDialog(null, "Sistema Interno de Controle do Restaurante."
+                + "\n\nControle de Fluxo de Caixa."
+                + "\nControle de Informações de Funcionários."
+                + "\nControle de Convênios: Pessoa Física e Pessoa Jurídica."
+                + "\nControle de Fluxo de Produtos.", "SOBRE", JOptionPane.WARNING_MESSAGE, new ImageIcon(
+                    Sobre.class.getResource
+                    ("icon.png")
+                ));
         
+              
         
     }
     

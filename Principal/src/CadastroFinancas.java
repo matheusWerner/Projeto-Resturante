@@ -19,6 +19,8 @@ public class CadastroFinancas {
     int atual = 0;
     double despesas[] = new double[12];
     double ganhos[] = new double[12];
+    double balanco[] = new double[12];
+    
     
     
     
@@ -136,7 +138,7 @@ public class CadastroFinancas {
               "\n\n3 - Buscar Finanças do Mês" +
               "\n\n4 - Listar Vendas dos Mêses" +      
               "\n\n5 - Acessar Menu de Estatísticas de Finanças" + 
-              "\n\n6 - SAIR", "",0,
+              "\n\n6 - VOLTAR", "",0,
               new ImageIcon(CadastroFinancas.class.getResource("banknote.png")), null, null).toString());
         
         while(menuDasFinancas != 6) {
@@ -149,7 +151,7 @@ public class CadastroFinancas {
                     break;
                 case 4: listarVendas();
                     break;
-                case 5: 
+                case 5: menuEstatisticas();
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Oppção Inválida");
@@ -170,37 +172,25 @@ public class CadastroFinancas {
     public void menuEstatisticas(){
         
          int menuDasEstatisticas = Integer.parseInt(JOptionPane.showInputDialog(
-              "1 - Total do Valor das Despesas no Mês" +
-              "\n2 - Total do Valor das Despesas do Ano" + 
-              "\n3 - Total do Valor de Recebimento do Mês" +
-              "\n4 - Total do Valor de Recebimento do Ano" +
-              "\n5 - Acessar o balanço do Mês" +
-              "\n6 - Acessar o balnaço do Ano" +       
-              "\n7 - SAIR"));
+              "1 - Total do Valor das Despesas no Mês" + 
+              "\n2 - Total do Valor de Recebimento do Mês" +
+              "\n3 - Acessar o balanço do Mês" +    
+              "\n4 - VOLTAR"));
         
         while(menuDasEstatisticas != 7) {
             switch (menuDasEstatisticas) {
-                case 1: 
+                case 1: estatisticasDespesasMes();
                         break;
-                case 2: 
+                case 2: estatiscaGanhosMes();
                         break;
-                case 3:
-                        break;
-                case 4: 
-                        break;
-                case 5: 
-                        break;
-                case 6: 
+                case 3: balancoMes();
                         break;
             }
             menuDasEstatisticas = Integer.parseInt(JOptionPane.showInputDialog(null,
-              "1 - Total do Valor das Despesas no Mês" +
-              "\n2 - Total do Valor das Despesas do Ano" + 
-              "\n3 - Total do Valor de Recebimento do Mês" +
-              "\n4 - Total do Valor de Recebimento do Ano" +
-              "\n5 - Acessar o balanço do Mês" +
-              "\n6 - Acessar o balnaço do Ano" +
-              "\n7 - SAIR"));
+              "1 - Total do Valor das Despesas no Mês" + 
+              "\n2 - Total do Valor de Recebimento do Mês" +
+              "\n3 - Acessar o balanço do Mês" +    
+              "\n4 - VOLTAR"));
         }
         
     }
@@ -208,17 +198,112 @@ public class CadastroFinancas {
     public void estatisticasDespesasMes() {
            
         
+      
+        String busca = "";
         
     
         for (int i = 0; i < atual; i++) {
             
-        meses[i] = JOptionPane.showInputDialog("Informe o Mês para saber o valor das despesas");
-            
+        busca =   JOptionPane.showInputDialog(null,
+                "Mês", null, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
+                    "Janeiro", "Fevereiro","Março","Abril","Maio","Junho","Julho",
+                    "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+                },
+                ""
+        ).toString();
         
-          
+        despesas[i] = contaLuz[i] + 
+                      contaAgua[i] + 
+                      contaGas[i] + 
+                      aluguel[i] + 
+                      marketing[i] +
+                      folhaPagamento[i];
+        
+       
+        
+        JOptionPane.showMessageDialog(null, "O valor total das despesas desse més é:  R$" + despesas[i]);
+        
+        }
+        
+    }
+    
+    public void estatiscaGanhosMes() {
+        
+        String busca = "";
+        
+    
+        for (int i = 0; i < atual; i++) {
+            
+        busca =   JOptionPane.showInputDialog(null,
+                "Mês", null, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
+                    "Janeiro", "Fevereiro","Marçoo","Abril","Maio","Junho","Julho",
+                    "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+                },
+                ""
+        ).toString();
+        
+        ganhos[i] = eventos[i] + 
+                    vendas[i];
+                     
+        
+       
+        
+        JOptionPane.showMessageDialog(null, "O valor total das despesas desse més é:  R$" + ganhos[i]);
+        
+             
+        }
+        
+        
+        
+    
+    
+}
+    
+    public void balancoMes() {
+        
+         String busca = "";
+        
+    
+        for (int i = 0; i < atual; i++) {
+            
+        busca =   JOptionPane.showInputDialog(null,
+                "Mes", null, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
+                    "Janeiro", "Fevereiro","MarÃ§o","Abril","Maio","Junho","Julho",
+                    "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+                },
+                ""
+        ).toString();
+        
+        ganhos[i] = eventos[i] + 
+                    vendas[i];
+        
+         despesas[i] = contaLuz[i] + 
+                       contaAgua[i] + 
+                       contaGas[i] + 
+                       aluguel[i] + 
+                       marketing[i] +
+                       folhaPagamento[i];
+         
+         
+         
+         if (ganhos[i] >= despesas[i]){
+             
+             balanco[i] = ganhos[i] - despesas[i];
+             JOptionPane.showMessageDialog(null, "Lucro de:  R$" + balanco[i]);
+         } else {
+             balanco[i] = ganhos[i] - despesas[i];
+             JOptionPane.showMessageDialog(null, "PrejuÃ­zo de:  R$" + balanco[i]);
+         }
+                     
+        
+       
+        
+     
+             
         }
         
         
     }
+
     
 }
