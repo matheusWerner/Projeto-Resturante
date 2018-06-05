@@ -55,7 +55,7 @@ public void menuSistema() {
                 JOptionPane.INFORMATION_MESSAGE, 
                 new ImageIcon(SistemaMenu.class.getResource("restaurant.png")),
                 new Object[]{
-                "FuncionÃ¡rios",
+                "Funcionários",
                 "Produtos",
                 "Pessoa Física",
                 "Pessoa Jurídica",

@@ -35,7 +35,7 @@ public class CadastroFuncionario {
         nomes[x] = JOptionPane.showInputDialog("Insira seu nome").trim();
         
         try {
-        idades[x] = Integer.parseInt(JOptionPane.showInputDialog(nomes[0] + " informe a sua idade").trim());
+        idades[x] = Integer.parseInt(JOptionPane.showInputDialog(nomes[x] + " informe a sua idade").trim());
         salarios[x] = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor do salário").trim());
         }
         catch (NumberFormatException e)
@@ -52,7 +52,7 @@ public class CadastroFuncionario {
                 },
                 ""
         ).toString();
-        cpfs[x] = JOptionPane.showInputDialog(nomes[0] + " informe o  CPF").replace(".","").replace("-","").trim();
+        cpfs[x] = JOptionPane.showInputDialog(nomes[x] + " informe o  CPF").replace(".","").replace("-","").trim();
         cargos[x] = JOptionPane.showInputDialog(null,
                 "Cargo", null, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
                     "", "Barman", "Cheff","Garçom/Garçonete", "Ajudante de Cozinha", "Faxineiro(a)"
@@ -150,13 +150,13 @@ public class CadastroFuncionario {
     public void menuFuncionario() {
         
        int menuDosFuncionarios = Integer.parseInt(JOptionPane.showInputDialog(null, 
-              "Digite o Código para acessar as Opçõeses" +
+              "Digite o Código para acessar as Opções" +
               "\n\nCÓDIGO  |      OPÇÃO" +
               "\n\n1               |      Cadastrar Funcionário" + 
               "\n\n2               |      Editar Funcionário" + 
               "\n\n3               |      Buscar pelo Nome do Funcionário" +
               "\n\n4               |      Listar Funcionário" +
-              "\n\n5               |      Mostrar quantidade de cadastros" +       
+              "\n\n5               |      Mostrar Quantidade de Cadastros" +       
               "\n\n6               |      Acessar Menu de Estatíscas" +
               "\n\n7               |      Acessar Folha de Pagamento" +        
               "\n\n8               |      VOLTAR", "Menu de Funcionários",0,
@@ -294,8 +294,9 @@ public class CadastroFuncionario {
             
             totalSalarios = totalSalarios + salarios[i];
             
-            JOptionPane.showMessageDialog(null, "Folha Salarial: R$ " + salarios[i]);
+            
         }
+        JOptionPane.showMessageDialog(null, "Folha Salarial: R$ " + totalSalarios);
        
     }
     

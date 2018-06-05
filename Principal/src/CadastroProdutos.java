@@ -2,23 +2,19 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
  *
- * @author Patrick Otavio do Nacimento
+ * @author Patrick Otavio do Nacimento e Matheus Ruan Werner
  */
 public class CadastroProdutos {
     
   
     
-    String transportadoras[] = new String[5];
-    String medidas[] = new String[5];
-    String dia[] = new String[5];
+    String transportadoras[] = new String[3];
+    double medidaKilo[] = new double[3];
+    double medidaLitros[] = new double[3];
+    String meses[] = new String[3];
     
     
     int atual = 0;
@@ -45,7 +41,7 @@ public class CadastroProdutos {
     public void listarProdutos(){
         String texto = "";
         for(int i = 0; i < atual; i++){
-        texto += transportadoras[i] + "  " + medidas[i] + "   " + dia[i] + "\n";
+        texto += "Transportadora " + transportadoras[i] + "  " + medidaKilo[i] + " Kg    " + medidaLitros[i] + " L    " + "Mês: " + meses[i] + "\n";
     }
         JOptionPane.showMessageDialog(null, texto);
     }
@@ -76,7 +72,7 @@ public class CadastroProdutos {
                     buscarProdutos();
                     break;
                 case 5:
-                    estatisticas();
+                    menuEstatistica();
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Opção inválida");
@@ -95,45 +91,120 @@ public class CadastroProdutos {
         
     }
     
-    public void estatisticas(){
+    public void menuEstatistica() {
         
-        double mediaFornecido = 0;
+         int menuDasEstatisticas = Integer.parseInt(JOptionPane.showInputDialog(null,
+                "1 - Média de Fornecimento em Kilos(kg)" +
+                "\n2 - Média de Fornecimento em Litros(L)" +
+                "\n3 - VOLTAR", "",0,
+                new ImageIcon(CadastroProdutos.class.getResource("groceries-bag.png")), 
+                null, null).toString());
+        
+        while(menuDasEstatisticas != 3){
+            switch (menuDasEstatisticas) {
+                case 1:
+                    estatisticaKilos();
+                    break;
+                case 2:
+                    estatisticaLitros();
+                    break;
+
+                default:
+                    JOptionPane.showMessageDialog(null, "Opção inválida");
+                    
+            }
+        menuDasEstatisticas = Integer.parseInt(JOptionPane.showInputDialog(null,
+                "1 - Média de Fornecimento em Kilos(kg)" +
+                "\n2 -Média de Fornecimento em Litros(L)" +
+                "\n3 - VOLTAR", "",0,
+                new ImageIcon(CadastroProdutos.class.getResource("groceries-bag.png")), 
+                null, null).toString());
+        }
+        
+        
+    }
+    
+    public void estatisticaKilos(){
+        
+        double mediaKilos = 0;
         
         for (int i = 0; i < atual; i++) {
             
+            mediaKilos = mediaKilos + medidaKilo[i];
             
          
         }
-        JOptionPane.showMessageDialog(null, "A média de produtos fornecida para o estaurante é: R$" + mediaFornecido / atual);
+        JOptionPane.showMessageDialog(null, "A média de fornecimento em Kg para o restaurante até então é: " + mediaKilos / atual + " Kg");
+        
+        
+    }
+    
+    public void estatisticaLitros() {
+        
+           
+        double mediaLitros = 0;
+        
+        for (int i = 0; i < atual; i++) {
+            
+            mediaLitros = mediaLitros + medidaLitros[i];
+            
+         
+        }
+        JOptionPane.showMessageDialog(null, "A média de fornecimento em Litros para o restaurante até então é: " + mediaLitros / atual + " L");
+        
         
         
     }
     
     public void buscarProdutos(){
-         String busca = JOptionPane.showInputDialog("Digite o nome parcial da transportadora para a buscar mais informações");
+         String busca = JOptionPane.showInputDialog(null,
+                "Transportadora", null, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
+                    "","A", "B","C"
+                },
+                ""
+        ).toString();
          
          for(int i = 0; i < atual; i++){
              if(transportadoras[i].contains(busca)){
                 JOptionPane.showMessageDialog(null, 
                 "Nome da Transportadora: " + transportadoras[i] +
-                "Carga fornecida: " + medidas[i] +
-                "Dia do fornecimento: " + dia[i]);
+                "\nCarga em Kilos: " + medidaKilo[i] + " Kg" +
+                "\nCarga em Litros: " + medidaLitros[i] + " L" +            
+                "\nDia do fornecimento: " + meses[i]);
                  
              }
          }
     }
     
     public void solicitarInformação(int posicao){
-        transportadoras[posicao] = JOptionPane.showInputDialog("Digite qual transportadora");
-        medidas[posicao] = JOptionPane.showInputDialog("Digite quantidades do fornecimento em kg ou litros");
-        dia[posicao] = JOptionPane.showInputDialog("Dia do fornecimento").replace(".","").replace("-","").replace("/","");
+        
+        
+          meses[posicao] =  JOptionPane.showInputDialog(null,
+                "Mês", null, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
+                    "","Janeiro", "Fevereiro","Março","Abril","Maio","Junho","Julho",
+                    "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+                },
+                ""
+        ).toString();
+        
+        transportadoras[posicao] = JOptionPane.showInputDialog(null,
+                "Transportadora", null, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
+                    "","A", "B","C"
+                },
+                ""
+        ).toString();
+        
+        medidaKilo[posicao] = Double.parseDouble(JOptionPane.showInputDialog("Digite quantidades do fornecimento em Kg"));
+        medidaLitros[posicao] = Double.parseDouble(JOptionPane.showInputDialog("Digite quantidades do fornecimento em L"));
+       
     }
     
     public void apresentarInformação(int i){
         JOptionPane.showMessageDialog(null, 
                 "Nome da Transportadora: " + transportadoras[i] +
-                "Carga fornecida: " + medidas[i] +
-                "Dia do fornecimento: " + dia[i]
+                "Carga em Kilos: " + medidaKilo[i] + " Kg" +
+                "Carga em Litros: " + medidaLitros[i] + " L" +            
+                "Mês do fornecimento: " + meses[i]
                         
                         
                       

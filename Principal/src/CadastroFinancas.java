@@ -84,6 +84,7 @@ public class CadastroFinancas {
     public void listarVendas(){
         
         String texto = "";
+        
         for (int i = 0; i < atual; i++) {
             texto += meses[i] + "  -  " + "R$ " + vendas[i] + "\n";
         }
@@ -142,8 +143,8 @@ public class CadastroFinancas {
         
         int menuDasFinancas = Integer.parseInt(JOptionPane.showInputDialog(null, 
               "Digite o Código para acessar as Opções" +
-              "\n\nCóDIGO  |      OPÇÃO" +       
-              "\n\n1               |      Cadastrar FinanÇas do Mês" + 
+              "\n\nCÓDIGO   |      OPÇÃO" +       
+              "\n\n1               |      Cadastrar Finanças do Mês" + 
               "\n\n2               |      Editar Finanças do Mês" + 
               "\n\n3               |      Buscar Finanças do Mês" +
               "\n\n4               |      Listar Vendas dos Meses" +      
@@ -170,7 +171,7 @@ public class CadastroFinancas {
             menuDasFinancas = Integer.parseInt(JOptionPane.showInputDialog(null,  
               "Digite o Código para acessar as Opções" +
               "\n\nCÓDIGO  |      OPÇÃO" +       
-              "\n\n1               |      Cadastrar FinanÇas do Mês" + 
+              "\n\n1               |      Cadastrar Finanças do Mês" + 
               "\n\n2               |      Editar Finanças do Mês" + 
               "\n\n3               |      Buscar Finanças do Mês" +
               "\n\n4               |      Listar Vendas dos Meses" +      
@@ -202,7 +203,7 @@ public class CadastroFinancas {
                         break;
                 default:
                     
-                    JOptionPane.showMessageDialog(null, "OpÃ§Ã£o InvÃ¡lida", "ERROR", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "OPÇÃO INVÁLIDA", "ERROR", JOptionPane.WARNING_MESSAGE);
                  }
             menuDasEstatisticas = Integer.parseInt(JOptionPane.showInputDialog(null, 
               "Digite o Código para acessar as Opções" +
@@ -211,7 +212,7 @@ public class CadastroFinancas {
               "\n\n2               |      Total do Valor de Recebimento do Mês" +
               "\n\n3               |      Acessar o balanço do Mês" +      
               "\n\n4               |      VOLTAR", "Menu de Estatísticas",0,
-              new ImageIcon(CadastroFinancas.class.getResource("bar-chart .png")), null, null).toString());
+              new ImageIcon(CadastroFinancas.class.getResource("bar-chart.png")), null, null).toString());
         }
         
     }
@@ -225,7 +226,7 @@ public class CadastroFinancas {
             
         busca =   JOptionPane.showInputDialog(null,
                 "Mês", null, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
-                    "Janeiro", "Fevereiro","Março","Abril","Maio","Junho","Julho",
+                    "", "Janeiro", "Fevereiro","Março","Abril","Maio","Junho","Julho",
                     "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
                 },
                 ""
@@ -247,6 +248,8 @@ public class CadastroFinancas {
         
         
         
+        
+        
     }
     
     public void estatiscaGanhosMes() {
@@ -258,7 +261,7 @@ public class CadastroFinancas {
             
         busca =   JOptionPane.showInputDialog(null,
                 "Mês", null, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
-                    "Janeiro", "Fevereiro","Março","Abril","Maio","Junho","Julho",
+                    "","Janeiro", "Fevereiro","Março","Abril","Maio","Junho","Julho",
                     "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
                 },
                 ""
@@ -290,7 +293,7 @@ public class CadastroFinancas {
             
         busca =   JOptionPane.showInputDialog(null,
                 "Mês", null, JOptionPane.QUESTION_MESSAGE, null, new Object[]{
-                    "Janeiro", "Fevereiro","Março","Abril","Maio","Junho","Julho",
+                    "","Janeiro", "Fevereiro","Março","Abril","Maio","Junho","Julho",
                     "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
                 },
                 ""
